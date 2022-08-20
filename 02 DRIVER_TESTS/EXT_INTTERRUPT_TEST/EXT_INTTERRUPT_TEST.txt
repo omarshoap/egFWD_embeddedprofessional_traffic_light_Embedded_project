@@ -1,0 +1,39 @@
+/*
+ * traffic_light_project.c
+ *
+ * Created: 8/18/2022 10:27:25 AM
+ * Author : omar
+ */ 
+
+#include "avr/interrupt.h"
+
+#define F_CPU 8000000UL
+#include "UTIL/STD_TYPES.h"
+#include "UTIL/REG.h"
+#include "UTIL/BIT_MATH.h"
+#include "MCAL/DIO/DIO.h"
+#include "MCAL/EXT_INT/EXT_INT.h"
+#include "MCAL/TIMER/TIMER.h"
+#include "HAL/LED/LED.h"
+#include "HAL/P_B/P_B.h"
+
+int main(void)
+{
+	EXT_INT_0_INIT();	
+	DIO_PIN_DIRECTION(DIO_PORTA,0,OUTPUT);
+	DIO_PIN_WRITE(DIO_PORTA,0,HIGH);
+    while (1) 
+    {
+
+		
+		
+    }
+}
+
+ISR(INT0_vect)
+{
+	
+		DIO_PIN_TOG(DIO_PORTA,0);
+
+	
+}

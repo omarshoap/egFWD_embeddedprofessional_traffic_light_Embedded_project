@@ -1,0 +1,66 @@
+/*
+ * traffic_light_project.c
+ *
+ * Created: 8/18/2022 10:27:25 AM
+ * Author : omar
+ */ 
+
+#define F_CPU 8000000UL
+#include "UTIL/STD_TYPES.h"
+#include "UTIL/REG.h"
+#include "UTIL/BIT_MATH.h"
+#include "MCAL/DIO/DIO.h"
+#include "MCAL/EXT_INT/EXT_INT.h"
+#include "MCAL/TIMER/TIMER.h"
+#include "HAL/LED/LED.h"
+#include "HAL/P_B/P_B.h"
+
+int main(void)
+{
+	DIO_PIN_DIRECTION(DIO_PORTA,0,OUTPUT);
+	DIO_PIN_DIRECTION(DIO_PORTA,1,OUTPUT);
+	DIO_PIN_DIRECTION(DIO_PORTA,2,OUTPUT);
+	DIO_PIN_DIRECTION(DIO_PORTA,3,OUTPUT);
+	DIO_PIN_DIRECTION(DIO_PORTA,4,OUTPUT);
+	DIO_PIN_DIRECTION(DIO_PORTA,5,OUTPUT);
+	DIO_PIN_DIRECTION(DIO_PORTA,6,OUTPUT);
+	DIO_PIN_DIRECTION(DIO_PORTA,7,OUTPUT);
+	//**********************************//
+		DIO_PIN_DIRECTION(DIO_PORTB,0,OUTPUT);
+		DIO_PIN_DIRECTION(DIO_PORTB,1,OUTPUT);
+		DIO_PIN_DIRECTION(DIO_PORTB,2,OUTPUT);
+		DIO_PIN_DIRECTION(DIO_PORTB,3,OUTPUT);
+		DIO_PIN_DIRECTION(DIO_PORTB,4,OUTPUT);
+		DIO_PIN_DIRECTION(DIO_PORTB,5,OUTPUT);
+		DIO_PIN_DIRECTION(DIO_PORTB,6,OUTPUT);
+		DIO_PIN_DIRECTION(DIO_PORTB,7,OUTPUT);
+    /* Replace with your application code */
+    while (1) 
+    {
+	//	DIO_PIN_WRITE(DIO_PORTA,0,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,0,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,1,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,2,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,3,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,4,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,5,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,6,HIGH);
+		DIO_PIN_WRITE(DIO_PORTA,7,HIGH);	
+//*************************************//
+		DIO_PIN_WRITE(DIO_PORTB,0,HIGH);
+		DIO_PIN_WRITE(DIO_PORTB,1,HIGH);
+		DIO_PIN_WRITE(DIO_PORTB,2,HIGH);
+		DIO_PIN_WRITE(DIO_PORTB,3,HIGH);
+		DIO_PIN_WRITE(DIO_PORTB,4,HIGH);
+		DIO_PIN_WRITE(DIO_PORTB,5,HIGH);
+		DIO_PIN_WRITE(DIO_PORTB,6,HIGH);
+		DIO_PIN_WRITE(DIO_PORTB,7,HIGH);			
+    }
+}
+
+/************************************************************************/
+/* void DIO_PIN_DIRECTION(u8,u8,u8);
+void DIO_PIN_WRITE(u8,u8,u8);
+u8 DIO_PIN_READ(u8 ,u8 );
+void DIO_PIN_TOG(u8 ,u8 );                                                                     */
+/************************************************************************/
